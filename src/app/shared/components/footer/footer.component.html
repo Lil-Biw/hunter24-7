@@ -1,0 +1,49 @@
+<footer class="footer">
+  <div class="container footer-grid">
+
+    <div class="footer-brand">
+      <div class="footer-logo">Hunter <span>24/7</span></div>
+      <p>Seguridad privada integral para empresas e industrias en Chile. Tecnología de vanguardia combinada con personal altamente capacitado.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Servicios</h4>
+      <ul>
+        @for (service of services; track service.slug) {
+          <li>
+            <a [routerLink]="['/servicios', service.slug]">{{ service.name }}</a>
+          </li>
+        }
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul class="contact-list">
+        <li>
+          <span>📧</span>
+          <a [href]="'mailto:' + contactInfo.email">{{ contactInfo.email }}</a>
+        </li>
+        <li>
+          <span>📞</span>
+          <a [href]="'tel:' + contactInfo.phone">{{ contactInfo.phone }}</a>
+        </li>
+        <li>
+          <span>💬</span>
+          <a [href]="'https://wa.me/' + contactInfo.whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+        </li>
+        <li>
+          <span>📍</span>
+          <span>{{ contactInfo.address }}</span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© {{ currentYear }} Hunter 24/7. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>

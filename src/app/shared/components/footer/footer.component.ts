@@ -1,8 +1,23 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { SERVICES } from '../../../core/data/services.data';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  template: `<footer style="background:#1A1A1A;color:#757575;text-align:center;padding:32px;margin-top:64px;">© 2026 Hunter 24/7</footer>`,
+  imports: [RouterLink],
+  templateUrl: './footer.component.html',
+  styleUrl: './footer.component.scss',
 })
-export class FooterComponent {}
+export class FooterComponent {
+  services = SERVICES;
+  currentYear = new Date().getFullYear();
+
+  // TODO: backend - load contact info from server config
+  contactInfo = {
+    email: 'contacto@hunter247.cl',
+    phone: '+56 X XXXX XXXX',
+    whatsapp: '56XXXXXXXXX',
+    address: 'Chile — Zona Centro-Sur',
+  };
+}
