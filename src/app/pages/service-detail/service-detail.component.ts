@@ -1,8 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { IService } from '../../core/models/service.model';
+import { getServiceBySlug } from '../../core/data/services.data';
+import { CtaBannerComponent } from '../../shared/components/cta-banner/cta-banner.component';
 
 @Component({
   selector: 'app-service-detail',
   standalone: true,
-  template: `<div style="padding:64px 32px;"><h1>Servicio</h1><p>Placeholder</p></div>`,
+  imports: [CommonModule, RouterLink, CtaBannerComponent],
+  templateUrl: './service-detail.component.html',
+  styleUrl: './service-detail.component.scss',
 })
-export class ServiceDetailComponent {}
+export class ServiceDetailComponent implements OnInit {
+  service: IService | undefined;
+
+  constructor(private route: ActivatedRoute, private router: Router) {}
+
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.service = getServiceBySlug(params['slug']);
+      if (!this.service) {
+        this.router.navigate(['/']);
+      }
+    });
+  }
+}

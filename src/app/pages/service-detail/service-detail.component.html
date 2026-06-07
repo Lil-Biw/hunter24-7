@@ -1,0 +1,44 @@
+@if (service) {
+  <div class="service-detail">
+
+    <div class="service-hero"
+         [style.backgroundImage]="'url(assets/images/servicios/' + service.heroImage + ')'">
+      <div class="service-hero-overlay"></div>
+      <div class="container service-hero-content">
+        <p class="eyebrow">Nuestros Servicios</p>
+        <h1 class="service-name">{{ service.name }}</h1>
+        <a routerLink="/contacto" class="btn-primary">{{ service.cta }}</a>
+      </div>
+    </div>
+
+    <section class="section service-body">
+      <div class="container service-layout">
+
+        <div class="service-desc">
+          <h2>Descripción del Servicio</h2>
+          <p>{{ service.fullDesc }}</p>
+        </div>
+
+        <div class="service-features">
+          <h3>¿Qué incluye?</h3>
+          <ul>
+            @for (feature of service.features; track feature) {
+              <li class="feature-item">
+                <span class="check" aria-hidden="true">✓</span>
+                {{ feature }}
+              </li>
+            }
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <app-cta-banner
+      [title]="'¿Le interesa ' + service.name + '?'"
+      subtitle="Solicite una cotización personalizada sin compromiso."
+      [ctaText]="service.cta"
+    />
+
+  </div>
+}
