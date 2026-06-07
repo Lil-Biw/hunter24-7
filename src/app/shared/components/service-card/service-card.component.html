@@ -1,13 +1,4 @@
 <div class="service-card">
-  <div class="card-icon">
-    <img
-      [src]="'assets/icons/' + service.icon + '.svg'"
-      [alt]="service.name"
-      width="32"
-      height="32"
-      (error)="onIconError($event)"
-    >
-  </div>
   <h3 class="card-name">{{ service.name }}</h3>
   <p class="card-desc">{{ service.shortDesc }}</p>
   <a [routerLink]="['/servicios', service.slug]" class="card-link">

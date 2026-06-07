@@ -17,11 +17,11 @@
   @include flex-center;
   margin-bottom: $spacing-sm;
   flex-shrink: 0;
+}
 
-  img {
-    width: 32px;
-    height: 32px;
-  }
+.card-emoji {
+  font-size: 1.75rem;
+  line-height: 1;
 }
 
 .card-name {

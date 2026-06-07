@@ -6,7 +6,7 @@ export const SERVICES: IService[] = [
     name: 'Guardias de Seguridad',
     shortDesc: 'Personal certificado OS-10 con supervisión GPS en tiempo real y reportes digitales.',
     fullDesc: 'Nuestros guardias de seguridad son profesionales acreditados por OS-10, el organismo supervisor de seguridad privada en Chile. Contamos con sistemas de control de rondas GPS en tiempo real, reportes digitales en línea y supervisión continua que garantizan un servicio de máxima calidad y trazabilidad para su empresa.',
-    icon: 'shield-person',
+    icon: '🛡️',
     heroImage: 'guardias.jpg',
     features: [
       'Personal acreditado y certificado por OS-10',
@@ -23,7 +23,7 @@ export const SERVICES: IService[] = [
     name: 'Cámaras de Seguridad y CCTV',
     shortDesc: 'Instalación IP con acceso remoto, tecnología HD/4K y análisis inteligente por IA.',
     fullDesc: 'Instalamos sistemas de videovigilancia IP de última generación con resolución HD y 4K, acceso remoto desde cualquier dispositivo y análisis de video por inteligencia artificial. Nuestras soluciones CCTV se adaptan a instalaciones de cualquier tamaño, desde comercios locales hasta grandes industrias.',
-    icon: 'video-camera',
+    icon: '📷',
     heroImage: 'camaras.jpg',
     features: [
       'Cámaras IP HD y 4K indoor/outdoor',
@@ -40,7 +40,7 @@ export const SERVICES: IService[] = [
     name: 'Monitoreo 24/7 en Tiempo Real',
     shortDesc: 'Central de monitoreo remoto de cámaras y alarmas con cobertura nacional y respuesta inmediata.',
     fullDesc: 'Nuestra central de monitoreo opera las 24 horas del día, los 7 días de la semana, supervisando remotamente sus cámaras y sistemas de alarma. Ante cualquier incidente, activamos de inmediato los protocolos de respuesta coordinados con carabineros, bomberos o nuestros equipos de reacción en terreno.',
-    icon: 'monitor',
+    icon: '📡',
     heroImage: 'monitoreo.jpg',
     features: [
       'Central de monitoreo activa 24/7/365',
@@ -57,7 +57,7 @@ export const SERVICES: IService[] = [
     name: 'Drones de Seguridad Inteligente',
     shortDesc: 'Vigilancia perimetral automatizada, verificación de alarmas y supervisión aérea con drones.',
     fullDesc: 'Incorporamos tecnología de drones autónomos para la vigilancia perimetral de grandes instalaciones industriales, agrícolas y corporativas. Los drones permiten cubrir extensas áreas en tiempo récord, verificar alarmas remotamente y realizar supervisión aérea de eventos y operativos especiales con alta precisión.',
-    icon: 'drone',
+    icon: '🚁',
     heroImage: 'drones.jpg',
     features: [
       'Vigilancia perimetral automatizada',
@@ -74,7 +74,7 @@ export const SERVICES: IService[] = [
     name: 'Sistema de Alarmas',
     shortDesc: 'Alarmas inteligentes integradas con monitoreo central, instalación y mantención certificada.',
     fullDesc: 'Diseñamos e instalamos sistemas de alarma a medida para hogares, comercios e industrias. Nuestros sistemas se integran directamente con nuestra central de monitoreo 24/7, garantizando una respuesta inmediata ante cualquier activación. Incluye sensores de movimiento, apertura, rotura de vidrio y humo.',
-    icon: 'bell-alert',
+    icon: '🔔',
     heroImage: 'alarmas.jpg',
     features: [
       'Diseño personalizado según instalación',
@@ -91,7 +91,7 @@ export const SERVICES: IService[] = [
     name: 'Aseo Industrial y Áreas Verdes',
     shortDesc: 'Programas de aseo adaptados a cada cliente, personal especializado y compromiso con el medioambiente.',
     fullDesc: 'Complementamos nuestros servicios de seguridad con soluciones integrales de aseo industrial y mantención de áreas verdes. Diseñamos programas de trabajo adaptados a las necesidades específicas de cada cliente, con personal capacitado y productos de alta calidad con enfoque en sustentabilidad.',
-    icon: 'cleaning',
+    icon: '🧹',
     heroImage: 'aseo.jpg',
     features: [
       'Programas personalizados por instalación',

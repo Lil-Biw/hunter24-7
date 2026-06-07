@@ -40,7 +40,8 @@
   display: inline-block;
   transition: background-color $transition-speed ease;
 
-  &:hover {
+  &:hover, &:focus, &:active, &:visited {
+    color: $color-text-light;
     background-color: $color-primary-dark;
   }
 }
