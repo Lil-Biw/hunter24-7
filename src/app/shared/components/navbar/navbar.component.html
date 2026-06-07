@@ -1,0 +1,47 @@
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="container navbar-inner">
+
+    <a routerLink="/" class="navbar-logo" (click)="closeMenu()">
+      <span class="logo-text">Hunter <span class="logo-accent">24/7</span></span>
+    </a>
+
+    <ul class="navbar-links" [class.open]="isMenuOpen">
+      <li>
+        <a routerLink="/" routerLinkActive="active"
+           [routerLinkActiveOptions]="{exact:true}"
+           (click)="closeMenu()">Inicio</a>
+      </li>
+      <li class="dropdown" [class.open]="isDropdownOpen">
+        <button class="dropdown-toggle" (click)="toggleDropdown()">
+          Servicios <span class="arrow">&#9662;</span>
+        </button>
+        <ul class="dropdown-menu">
+          @for (service of services; track service.slug) {
+            <li>
+              <a [routerLink]="['/servicios', service.slug]" (click)="closeMenu()">
+                {{ service.name }}
+              </a>
+            </li>
+          }
+        </ul>
+      </li>
+      <li>
+        <a routerLink="/contacto" routerLinkActive="active"
+           (click)="closeMenu()">Contacto</a>
+      </li>
+    </ul>
+
+    <a routerLink="/contacto" class="navbar-cta btn-primary" (click)="closeMenu()">
+      Cotizar
+    </a>
+
+    <button class="hamburger" (click)="toggleMenu()"
+            [attr.aria-expanded]="isMenuOpen"
+            aria-label="Abrir menú de navegación">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+</nav>
