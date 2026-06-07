@@ -1,0 +1,13 @@
+<section class="section services-overview" id="servicios">
+  <div class="container">
+    <div class="section-title">
+      <h2>Nuestros <span class="text-orange">Servicios</span></h2>
+      <p>Soluciones integrales de seguridad privada adaptadas a las necesidades de su empresa.</p>
+    </div>
+    <div class="services-grid">
+      @for (service of services; track service.slug) {
+        <app-service-card [service]="service" />
+      }
+    </div>
+  </div>
+</section>
