@@ -1,0 +1,134 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.contact-hero {
+  background: linear-gradient(135deg, $color-bg-dark, $color-bg-medium);
+  padding: ($navbar-height + $spacing-xl) $spacing-md $spacing-xl;
+
+  h1 { color: $color-text-light; }
+
+  p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    margin: 0;
+  }
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: $spacing-xl;
+  align-items: start;
+
+  @include responsive(tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-info {
+  h2 { margin-bottom: $spacing-lg; }
+}
+
+.info-item {
+  display: flex;
+  gap: $spacing-md;
+  align-items: flex-start;
+  margin-bottom: $spacing-lg;
+
+  .info-icon { font-size: 1.5rem; flex-shrink: 0; }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  strong { font-weight: 600; color: $color-text-dark; font-size: 0.85rem; }
+  a, span { color: $color-text-muted; font-size: 0.95rem; }
+  a:hover  { color: $color-primary; }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-md;
+
+  @include responsive(mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: $color-text-dark;
+  }
+
+  input, select, textarea {
+    padding: 12px $spacing-md;
+    border: 1.5px solid $color-border;
+    border-radius: $border-radius;
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: $color-text-dark;
+    background: $color-text-light;
+    transition: border-color $transition-speed;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+      border-color: $color-primary;
+      box-shadow: 0 0 0 3px rgba(230, 81, 0, 0.1);
+    }
+
+    &.error {
+      border-color: #d32f2f;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+}
+
+.error-msg {
+  color: #d32f2f;
+  font-size: 0.8rem;
+}
+
+.btn-submit {
+  align-self: flex-start;
+  font-size: 1rem;
+  padding: 14px 32px;
+}
+
+.success-message {
+  text-align: center;
+  padding: $spacing-xl;
+  background: $color-bg-light;
+  border-radius: $border-radius-lg;
+
+  .success-icon {
+    font-size: 3rem;
+    margin-bottom: $spacing-md;
+  }
+
+  h3 {
+    color: $color-primary-dark;
+    margin-bottom: $spacing-sm;
+  }
+
+  p { color: $color-text-muted; margin: 0; }
+}

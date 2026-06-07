@@ -1,0 +1,153 @@
+<div class="contact-page">
+
+  <div class="contact-hero">
+    <div class="container">
+      <h1>Solicitar <span class="text-orange">Cotización</span></h1>
+      <p>Complete el formulario y le respondemos en menos de 24 horas hábiles.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container contact-layout">
+
+      <div class="contact-info">
+        <h2>Información de Contacto</h2>
+
+        <div class="info-item">
+          <span class="info-icon">📧</span>
+          <div>
+            <strong>Email</strong>
+            <!-- TODO: backend - load dynamically from config -->
+            <a href="mailto:contacto@hunter247.cl">contacto@hunter247.cl</a>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <span class="info-icon">📞</span>
+          <div>
+            <strong>Teléfono</strong>
+            <!-- TODO: backend - load dynamically from config -->
+            <span>+56 X XXXX XXXX</span>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <span class="info-icon">💬</span>
+          <div>
+            <strong>WhatsApp</strong>
+            <!-- TODO: backend - load WhatsApp number from config -->
+            <a href="https://wa.me/56XXXXXXXXX" target="_blank" rel="noopener noreferrer">
+              Enviar mensaje
+            </a>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <span class="info-icon">🕐</span>
+          <div>
+            <strong>Horario de atención</strong>
+            <span>Lunes a Viernes, 9:00 — 18:00 hrs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrapper">
+        @if (!submitted) {
+          <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate class="contact-form">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nombre">Nombre completo *</label>
+                <input id="nombre" type="text" formControlName="nombre"
+                       placeholder="Juan Pérez"
+                       [class.error]="isInvalid('nombre')"
+                       autocomplete="name">
+                @if (isInvalid('nombre')) {
+                  <span class="error-msg" role="alert">
+                    Ingrese su nombre completo (mínimo 3 caracteres).
+                  </span>
+                }
+              </div>
+
+              <div class="form-group">
+                <label for="empresa">Empresa / Organización</label>
+                <input id="empresa" type="text" formControlName="empresa"
+                       placeholder="Mi Empresa SpA"
+                       autocomplete="organization">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Correo electrónico *</label>
+                <input id="email" type="email" formControlName="email"
+                       placeholder="correo@empresa.cl"
+                       [class.error]="isInvalid('email')"
+                       autocomplete="email">
+                @if (isInvalid('email')) {
+                  <span class="error-msg" role="alert">
+                    Ingrese un correo electrónico válido.
+                  </span>
+                }
+              </div>
+
+              <div class="form-group">
+                <label for="telefono">Teléfono *</label>
+                <input id="telefono" type="tel" formControlName="telefono"
+                       placeholder="+56912345678"
+                       [class.error]="isInvalid('telefono')"
+                       autocomplete="tel">
+                @if (isInvalid('telefono')) {
+                  <span class="error-msg" role="alert">
+                    Ingrese un teléfono chileno válido (+56XXXXXXXXX).
+                  </span>
+                }
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="servicio">Servicio de interés *</label>
+              <select id="servicio" formControlName="servicio"
+                      [class.error]="isInvalid('servicio')"
+                      aria-label="Seleccione el servicio de interés">
+                <option value="">— Seleccione un servicio —</option>
+                @for (service of services; track service.slug) {
+                  <option [value]="service.slug">{{ service.name }}</option>
+                }
+                <option value="otro">Otro / Consulta general</option>
+              </select>
+              @if (isInvalid('servicio')) {
+                <span class="error-msg" role="alert">Seleccione un servicio.</span>
+              }
+            </div>
+
+            <div class="form-group">
+              <label for="mensaje">Descripción de su necesidad *</label>
+              <textarea id="mensaje" formControlName="mensaje" rows="5"
+                        placeholder="Describa brevemente qué tipo de seguridad necesita, ubicación, cantidad de personas o instalaciones, etc."
+                        [class.error]="isInvalid('mensaje')"></textarea>
+              @if (isInvalid('mensaje')) {
+                <span class="error-msg" role="alert">
+                  El mensaje debe tener al menos 20 caracteres.
+                </span>
+              }
+            </div>
+
+            <button type="submit" class="btn-primary btn-submit">
+              Solicitar Cotización
+            </button>
+
+          </form>
+        } @else {
+          <div class="success-message" role="status">
+            <div class="success-icon">✅</div>
+            <h3>¡Solicitud enviada!</h3>
+            <p>Hemos recibido su consulta. Le responderemos a la brevedad en el correo o teléfono indicado.</p>
+          </div>
+        }
+      </div>
+
+    </div>
+  </section>
+
+</div>
