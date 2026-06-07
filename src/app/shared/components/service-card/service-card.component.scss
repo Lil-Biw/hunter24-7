@@ -1,0 +1,50 @@
+@use '../../../../styles/variables' as *;
+@use '../../../../styles/mixins' as *;
+
+.service-card {
+  @include card;
+  padding: $spacing-lg;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.card-icon {
+  width: 56px;
+  height: 56px;
+  background: rgba(230, 81, 0, 0.1);
+  border-radius: $border-radius;
+  @include flex-center;
+  margin-bottom: $spacing-sm;
+  flex-shrink: 0;
+
+  img {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.card-name {
+  font-size: 1.1rem;
+  color: $color-text-dark;
+  margin: 0;
+}
+
+.card-desc {
+  color: $color-text-muted;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+.card-link {
+  color: $color-primary;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  margin-top: $spacing-sm;
+  transition: color $transition-speed;
+
+  &:hover { color: $color-primary-dark; }
+}
