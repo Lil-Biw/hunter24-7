@@ -67,11 +67,11 @@
 @mixin card {
   background: $color-text-light;
   border-radius: $border-radius-lg;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px $shadow-sm;
   transition: box-shadow $transition-speed ease, transform $transition-speed ease;
 
   &:hover {
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 8px 32px $shadow-md;
     transform: translateY(-4px);
   }
 }
