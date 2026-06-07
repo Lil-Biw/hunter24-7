@@ -1,0 +1,45 @@
+@use '../../../../styles/variables' as *;
+@use '../../../../styles/mixins' as *;
+
+.cta-banner {
+  background: linear-gradient(135deg, $color-primary-dark 0%, $color-primary 60%, $color-primary-light 100%);
+  padding: $spacing-xl $spacing-md;
+}
+
+.cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-lg;
+
+  @include responsive(tablet) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.cta-text {
+  h2 {
+    color: $color-text-light;
+    margin-bottom: $spacing-sm;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    font-size: 1.1rem;
+  }
+}
+
+.cta-btn {
+  @include button-primary;
+  background: $color-text-light;
+  color: $color-primary-dark;
+  white-space: nowrap;
+  flex-shrink: 0;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: $color-primary-dark;
+  }
+}
