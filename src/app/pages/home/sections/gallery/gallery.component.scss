@@ -1,0 +1,65 @@
+@use '../../../../../styles/variables' as *;
+@use '../../../../../styles/mixins' as *;
+
+.section {
+  @include section-padding;
+}
+
+.container {
+  @include container;
+}
+
+.gallery {
+  background: $color-bg-light;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: $spacing-xl;
+
+  h2 {
+    color: $color-text-dark;
+    font-size: 2rem;
+    margin-bottom: $spacing-md;
+  }
+
+  p {
+    color: $color-text-muted;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 250px;
+  gap: $spacing-sm;
+
+  @include responsive(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include responsive(mobile) {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 200px;
+  }
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: $border-radius;
+  background: $color-bg-medium;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform $transition-speed ease;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+}

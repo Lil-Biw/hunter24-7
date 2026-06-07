@@ -1,0 +1,82 @@
+@use '../../../../../styles/variables' as *;
+@use '../../../../../styles/mixins' as *;
+
+.section {
+  @include section-padding;
+}
+
+.container {
+  @include container;
+}
+
+.why-us {
+  background: $color-bg-medium;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: $spacing-xl;
+}
+
+.why-title {
+  color: $color-text-light;
+  font-size: 2rem;
+  margin-bottom: $spacing-md;
+}
+
+.why-accent {
+  color: $color-primary-light;
+}
+
+.why-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $spacing-lg;
+
+  @include responsive(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include responsive(mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.reason-card {
+  text-align: center;
+  padding: $spacing-lg $spacing-md;
+  border-radius: $border-radius-lg;
+  border: 1px solid rgba(230, 81, 0, 0.2);
+  transition: border-color $transition-speed;
+
+  &:hover {
+    border-color: $color-primary;
+  }
+}
+
+.reason-icon {
+  font-size: 2.5rem;
+  margin-bottom: $spacing-md;
+  display: block;
+}
+
+h3 {
+  color: $color-text-light;
+  font-size: 1rem;
+  margin-bottom: $spacing-sm;
+  margin-top: 0;
+}
+
+p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+}

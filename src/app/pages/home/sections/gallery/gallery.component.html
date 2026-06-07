@@ -1,0 +1,15 @@
+<section class="section gallery">
+  <div class="container">
+    <div class="section-title">
+      <h2>Galería</h2>
+      <p>Nuestros colaboradores en terreno, experiencia a su servicio.</p>
+    </div>
+    <div class="gallery-grid">
+      @for (image of images; track image.src) {
+        <div class="gallery-item">
+          <img [src]="image.src" [alt]="image.alt" loading="lazy">
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,17 @@
+<section class="section why-us">
+  <div class="container">
+    <div class="section-title">
+      <h2 class="why-title">¿Por qué elegir <span class="why-accent">Hunter 24/7</span>?</h2>
+      <p class="why-subtitle">Combinamos experiencia, tecnología y compromiso para ofrecer la mejor seguridad privada en Chile.</p>
+    </div>
+    <div class="reasons-grid">
+      @for (reason of reasons; track reason.title) {
+        <div class="reason-card">
+          <div class="reason-icon">{{ reason.icon }}</div>
+          <h3>{{ reason.title }}</h3>
+          <p>{{ reason.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
