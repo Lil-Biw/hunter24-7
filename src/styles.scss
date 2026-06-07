@@ -1,0 +1,21 @@
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+@use 'styles/typography';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container { @include container; }
+.section    { @include section-padding; }
+
+.btn-primary { @include button-primary; }
+.btn-outline  { @include button-outline; }
